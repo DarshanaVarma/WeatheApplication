@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="MainViewModel"
+            type="com.example.weatherapp.viewModels.MainViewModel" />
+    </data>
+
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -30,7 +40,7 @@
         android:layout_width="match_parent"
         android:id="@+id/text"
         android:layout_height="48dp"
-        android:text="condition"
+        android:text="@={MainViewModel.text}"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="30dp"
@@ -57,6 +67,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textSize="15sp"
+            android:text="@={MainViewModel.name}"
             android:gravity="center"
             android:id="@+id/name"/>
 
@@ -65,6 +76,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textSize="15sp"
+            android:text="@={MainViewModel.country}"
             android:gravity="center"
             android:id="@+id/country"/>
 
@@ -74,6 +86,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="15sp"
+                android:text="@={MainViewModel.region}"
                 android:gravity="center"
                 android:id="@+id/region"/>
         <androidx.appcompat.widget.AppCompatTextView
@@ -81,20 +94,22 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textSize="15sp"
+            android:text="@={MainViewModel.tempC}"
             android:gravity="center"
             android:id="@+id/temp_c"/>
-
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textSize="15sp"
+            android:text="@={MainViewModel.tempF}"
             android:gravity="center"
             android:id="@+id/temp_f"/>
-
 
     </LinearLayout>
     </LinearLayout>
     </ScrollView>
 </LinearLayout>
+
+</layout>
